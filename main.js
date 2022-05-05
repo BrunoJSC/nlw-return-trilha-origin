@@ -1,10 +1,25 @@
 // const navigation = document.getElementById('navigation');
 
+window.addEventListener('scroll', onScroll);
+
 function onScroll() {
+  showScroll();
+  showBackToButtonOnScroll();
+}
+
+function showScroll() {
   if (scrollY > 0) {
     navigation.classList.add('scroll');
   } else {
     navigation.classList.remove('scroll');
+  }
+}
+
+function showBackToButtonOnScroll() {
+  if (scrollY > 500) {
+    backToTopButton.classList.add('show');
+  } else {
+    backToTopButton.classList.remove('show');
   }
 }
 
